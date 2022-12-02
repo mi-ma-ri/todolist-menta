@@ -5,7 +5,7 @@ export const Title = () => {
     <div>
       <div>
         <header>
-          <h1>menta TodoList</h1>
+          <h1>TodoList</h1>
         </header>
       </div>
     </div>

@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    {/* index.js → App.jsxという階層になっていて、ここでApp.jsxを呼び出している。*/}
   </React.StrictMode>
 );
 

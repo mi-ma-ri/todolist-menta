@@ -1,42 +1,22 @@
 import './App.css';
 import { useState } from "react";
 import { Title } from "./components/Title"
+import { Input } from "./components/Input"
+import { TodoList } from './components/TodoList';
 
 function App() {
-  const [text, setText] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [taskList, setTaskList] = useState([]);
+  // ↑ タスクの状態管理をこのuseStateで行っている
+  //const [edit. setEdit] = useState(false);
   
-  const onAdd = () => {
-    setTodoList((prev) => {
-      return [...prev, text];
-    });
-  };
-
-
   return (
     <div>
-      <Title />
-      <input
-        placeholder="タイトルを入力"
-        onChange={(e) => setText(e.target.value)}
-        value={text}
-      />
-      {text}
-      <button onClick={() => onAdd()}>追加</button>
-      <div>
-        <div className="lists">
-          {todoList.map((todo) => {
-            return (
-              <>
-                <li>{todo}</li>
-                <button className="btn ">編集</button>
-                <button className="btn ">削除</button>
-              </>
-            );
-          })}
-        </div>
+      <Title />  
+      <Input todoList={taskList} setTodoList={setTaskList} />
+      <TodoList todoList={taskList} setTodoList={setTaskList} />
+      {/* 3つのコンポーネントをここで記載 */}
+      {/*<Input value={text} placeholder="タイトルを入力" onChange={(e) => setText(e.target.value)} />*/}
       </div>
-    </div>
   );
 }
 
