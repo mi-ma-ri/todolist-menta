@@ -12,11 +12,11 @@ function App() {
   return (
     <div>
       <Title />  
-      <Input todoList={taskList} setTodoList={setTaskList} />
+      <Input setTodoList={setTaskList} />
       <TodoList todoList={taskList} setTodoList={setTaskList} />
       {/* 3つのコンポーネントをここで記載 */}
-      {/*<Input value={text} placeholder="タイトルを入力" onChange={(e) => setText(e.target.value)} />*/}
-      </div>
+      {/*値を渡すときは=の左側を渡す。基本的に命名は同じにするとミスがおきない。+渡すのは第一引数でも第二引数でもどちらでも良い。*/}
+    </div>
   );
 }
 
