@@ -3,6 +3,7 @@ import { useState } from 'react';
 
   export const Input = ({ setTodoList }) => {
   const [text, setText] = useState("");
+  
 
   const addTask = (e) => {
     e.preventDefault();
@@ -10,12 +11,16 @@ import { useState } from 'react';
       return;
     }
 
-    setTodoList((prev) => [
-      ...prev, 
-      {
-        text:text
-      },
-    ]);
+    setTodoList((prev) => {
+      console.log(prev[0])
+      return [
+        ...prev, 
+        {
+          text:text
+        },
+      ]
+    }
+    );
     setText("");
   };
   /* 基本的に...prevを使う */
