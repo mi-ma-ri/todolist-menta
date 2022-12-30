@@ -30,6 +30,7 @@ export const TodoList = ({ todoList, setTodoList }) => {
             <span>{task.text}</span>
             {edit === true && stateIndex === index ?
             <button onClick={() => editSubmits(index)}>保存</button>:<button onClick={() => editTask(index)}>編集</button>}
+            {/*上記ロジックの理解度が薄い*/}
             {edit === true && stateIndex === index ?
              (<input type="text" defaultValue={todoList[index].text} onChange={(e) => editfunc(e)} value={stateValue} />):null}
           </div>

@@ -24,7 +24,7 @@ import { useState } from 'react';
     setText("");
   };
   /* 基本的に...prevを使う */
-  /* propsで渡ってきている引数だけ記述すればいい(sett*/
+  /* propsで渡ってきている引数だけ記述すればいい(setTodoList)*/
   
   return (
     <div className='inputForm'>
