@@ -1,24 +1,30 @@
 import React from 'react'
 import { useState } from 'react';
 
-  export const Input = ({taskList, setTaskList}) => {
+  export const Input = ({ setTodoList }) => {
   const [text, setText] = useState("");
+  
 
   const addTask = (e) => {
     e.preventDefault();
     if (text === "") {
       return;
     }
-    
-    setTaskList([
-      ...taskList, 
-      {
-        text:text
-      },
-    ]);
+
+    setTodoList((prev) => {
+      console.log(prev[0])
+      return [
+        ...prev, 
+        {
+          text:text
+        },
+      ]
+    }
+    );
     setText("");
   };
-  
+  /* 基本的に...prevを使う */
+  /* propsで渡ってきている引数だけ記述すればいい(setTodoList)*/
   
   return (
     <div className='inputForm'>
